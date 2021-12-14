@@ -18,28 +18,42 @@ fun findDayAfterN(day:String, n:Int){
     }
 }
 
+fun findDayAfterN2(day: String, n:Int){
+    val map = (0 until DAYS.size).map { it ->
+        DAYS[it] to it
+    }.toMap()
+
+    var dayIndex = map[day]
+    if(dayIndex != null){
+        dayIndex = (dayIndex + n) % 7
+        var fDay = DAYS[dayIndex]
+        println("Index is $dayIndex and day $fDay")
+    }
+}
+
 
 fun main() {
-        findDayAfterN("MON", 1)
-    findDayAfterN("MON", 3)
-    findDayAfterN("MON", 5)
-    findDayAfterN("MON", 6)
-
-    findDayAfterN("TUE", 1)
-    findDayAfterN("TUE", 3)
-    findDayAfterN("TUE", 5)
-    findDayAfterN("TUE", 6)
-    findDayAfterN("TUE", 7)
-    findDayAfterN("TUE", 8)
-    findDayAfterN("TUE", 13)
+    findDayAfterN2("MON", 11)
+//    findDayAfterN("MON", 1)
+//    findDayAfterN("MON", 3)
+//    findDayAfterN("MON", 5)
+//    findDayAfterN("MON", 6)
+//
+//    findDayAfterN("TUE", 1)
+//    findDayAfterN("TUE", 3)
+//    findDayAfterN("TUE", 5)
+//    findDayAfterN("TUE", 6)
+//    findDayAfterN("TUE", 7)
+//    findDayAfterN("TUE", 8)
+//    findDayAfterN("TUE", 13)
 
 //    findDayAfterN("TUE", 1)
 //    findDayAfterN("TUE", 3)
-    findDayAfterN("TUE", 1001)
+//    findDayAfterN("TUE", 1001)
 //    findDayAfterN("TUE", 6)
     // findDayAfterN("SUN", 3)
     //findDayAfterN("MON", 4)
-    findDayAfterN("MON", 167)
+//    findDayAfterN("MON", 167)
 
 
 }
